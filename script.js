@@ -10,8 +10,21 @@ function conocerMas() {
 }
 
 function mostrarMensaje() {
-  alert('¡Bienvenido a Entre Líneas! Explora nuestros servicios y regístrate para comenzar tu próxima historia.');
+  document.getElementById('bienvenida-modal').showModal();
 }
+
+document.getElementById('explorar-bienvenida').addEventListener('click', function () {
+  document.getElementById('bienvenida-modal').close();
+  conocerMas();
+});
+
+// El diálogo también se cierra con Escape o al hacer clic fuera de su tarjeta.
+document.getElementById('bienvenida-modal').addEventListener('click', function (evento) {
+  const limites = this.getBoundingClientRect();
+  if (evento.target === this && (evento.clientX < limites.left || evento.clientX > limites.right || evento.clientY < limites.top || evento.clientY > limites.bottom)) {
+    this.close();
+  }
+});
 
 function cambiarTexto() {
   document.getElementById('mensaje').textContent = '¡JavaScript modificó esta página! Cada libro abre una nueva posibilidad.';

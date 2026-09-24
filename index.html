@@ -50,5 +50,14 @@
     <section class="seccion interactiva" aria-labelledby="titulo-interactivo"><div><p class="etiqueta">UN TOQUE PERSONAL</p><h2 id="titulo-interactivo">Haz tuyo este espacio.</h2><p id="mensaje" aria-live="polite">Presiona el botón para descubrir un mensaje.</p></div><div class="acciones"><button type="button" class="boton-secundario" onclick="cambiarTexto()">Cambiar mensaje</button><button type="button" class="boton-secundario" onclick="cambiarColor()" id="boton-color" aria-pressed="false">Cambiar color</button></div></section>
   </main>
   <footer id="contacto"><div><h2>Entre Líneas</h2><p>Historias que nos conectan.</p></div><div><h3>Contacto</h3><p>Información de ejemplo para práctica escolar.</p><a href="mailto:hola@entrelineas.example">hola@entrelineas.example</a></div><p class="pie">Aplicaciones Web · Práctica 2 · Proyecto académico</p></footer>
+  <dialog id="bienvenida-modal" class="bienvenida-modal" aria-labelledby="bienvenida-titulo" aria-describedby="bienvenida-descripcion">
+    <form method="dialog" class="cerrar-bienvenida"><button type="submit" aria-label="Cerrar bienvenida" autofocus>×</button></form>
+    <div class="bienvenida-emblema" aria-hidden="true">▥</div>
+    <p class="etiqueta">BIENVENIDO A ENTRE LÍNEAS</p>
+    <h2 id="bienvenida-titulo">Un espacio para descubrir.<br><em>Una comunidad para compartir.</em></h2>
+    <p id="bienvenida-descripcion">Cada lectura es una oportunidad para ampliar tu mundo. Encuentra tu próximo libro, comparte ideas en nuestro club de lectura o disfruta de un espacio para concentrarte.</p>
+    <p class="bienvenida-firma">Tu próxima historia empieza con una página.</p>
+    <button type="button" id="explorar-bienvenida">Explorar la biblioteca <span aria-hidden="true">→</span></button>
+  </dialog>
 </body>
 </html>

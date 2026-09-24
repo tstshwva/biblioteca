@@ -62,6 +62,20 @@ footer { background:var(--tinta); color:var(--fondo); padding:40px max(32px,calc
 footer h2 { font-size:28px; } footer h3 { font:14px Arial,sans-serif; font-weight:bold; } footer p, footer a { font-size:12px; } .pie { width:100%; border-top:1px solid #5b7066; padding-top:20px; }
 @media(max-width:760px) { .encabezado { flex-direction:column; align-items:flex-start; padding:22px; } nav { gap:22px; } main { padding:0 22px; } .bienvenida { flex-direction:column; align-items:stretch; gap:28px; padding-top:35px; } .ilustracion { width:100%; max-width:480px; align-self:center; } .titulo-seccion { display:block; } .tarjetas { flex-direction:column; } .tarjeta { width:100%; } .registro { flex-direction:column; padding:24px; gap:24px; } .interactiva { align-items:flex-start; flex-direction:column; } }
 @media(max-width:400px) { .campos { grid-template-columns:1fr; } nav { gap:16px; } }
+body:has(.bienvenida-modal[open]) { overflow:hidden; }
+.bienvenida-modal { width:min(570px,calc(100% - 32px)); max-height:calc(100dvh - 40px); padding:48px 38px 38px; border:1px solid var(--borde); border-radius:18px; background:var(--papel); color:var(--tinta); text-align:center; box-shadow:0 24px 90px #142a3440; }
+.bienvenida-modal::backdrop { background:rgb(20 39 32 / 60%); backdrop-filter:blur(5px); }
+.bienvenida-modal[open] { animation:abrir-bienvenida .3s ease-out; }
+.cerrar-bienvenida { position:absolute; top:12px; right:12px; }
+.cerrar-bienvenida button { display:grid; place-items:center; width:38px; height:38px; padding:0; background:transparent; color:var(--tinta); border:0; border-radius:50%; font-size:26px; font-weight:normal; }
+.cerrar-bienvenida button:hover { background:#e9eadc; }
+.bienvenida-emblema { display:grid; place-items:center; width:64px; height:64px; margin:0 auto 24px; border-radius:18px; background:#e9eadc; color:var(--acento); font-size:38px; }
+.bienvenida-modal h2 { font-size:clamp(25px,4vw,34px); line-height:1.25; }
+.bienvenida-modal h2 em { color:var(--acento); }
+#bienvenida-descripcion { font-size:15px; line-height:1.8; color:#526259; }
+.bienvenida-firma { margin:23px 0; font:italic 16px/1.5 Georgia,serif; }
+@keyframes abrir-bienvenida { from { opacity:0; transform:translateY(16px) scale(.98); } to { opacity:1; transform:none; } }
+@media(max-width:400px) { .bienvenida-modal { padding:45px 22px 28px; } }
 .revelar { opacity:0; transform:translateY(28px); transition:opacity .65s ease, transform .65s ease; }
 .revelar.visible { opacity:1; transform:translateY(0); }
 .tarjeta.revelar:nth-child(2) { transition-delay:.1s; }
@@ -74,4 +88,5 @@ button:active { transform:translateY(0); }
   body, button, .revelar { transition:none !important; }
   .revelar { opacity:1; transform:none; }
   button:hover { transform:none; }
+  .bienvenida-modal[open] { animation:none; }
 }
