@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entre Líneas | Biblioteca</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="encabezado">
+    <a class="marca" href="#inicio"><span aria-hidden="true">▥</span> Entre Líneas<span class="marca-sub">BIBLIOTECA & COMUNIDAD</span></a>
+    <nav aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#registro">Registro</a><a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+  <main>
+    <section id="inicio" class="bienvenida">
+      <div class="bienvenida-texto">
+        <p class="etiqueta">UN ESPACIO PARA TU CURIOSIDAD</p>
+        <h1>Tu próxima historia<br>empieza <em>aquí.</em></h1>
+        <p class="descripcion">Bienvenido a Entre Líneas. Descubre libros, comparte ideas y encuentra un lugar para aprender a tu ritmo.</p>
+        <button type="button" onclick="conocerMas()">Conocer más <span aria-hidden="true">↓</span></button>
+        <button type="button" class="boton-secundario" onclick="mostrarMensaje()">Ver bienvenida</button>
+        <p class="nota">Lectura, aprendizaje y comunidad en un mismo lugar.</p>
+      </div>
+      <figure class="ilustracion">
+        <img src="biblioteca.svg" alt="Ilustración de libros de colores, una taza y una planta sobre una mesa, junto a una ventana" width="600" height="520">
+        <figcaption>Abre un libro. Descubre una posibilidad.</figcaption>
+      </figure>
+    </section>
+    <section id="servicios" class="seccion">
+      <div class="titulo-seccion"><div><p class="etiqueta">MUCHO MÁS QUE LIBROS</p><h2>Un lugar, muchas posibilidades.</h2></div><p>Elige cómo quieres ser parte.</p></div>
+      <div class="tarjetas">
+        <article class="tarjeta"><span class="icono" aria-hidden="true">▤</span><p class="numero">01 / EXPLORA</p><h3>Préstamo de libros</h3><p>Encuentra tu siguiente lectura y solicita el préstamo para disfrutarla en casa.</p><button type="button" class="boton-secundario" data-servicio="prestamo">Solicitar préstamo <span aria-hidden="true">→</span></button></article>
+        <article class="tarjeta"><span class="icono" aria-hidden="true">☕</span><p class="numero">02 / COMPARTE</p><h3>Club de lectura</h3><p>Conversa sobre historias, conoce otras perspectivas y comparte tus autores favoritos.</p><button type="button" class="boton-secundario" data-servicio="club">Unirme al club <span aria-hidden="true">→</span></button></article>
+        <article class="tarjeta"><span class="icono" aria-hidden="true">✎</span><p class="numero">03 / CONCÉNTRATE</p><h3>Espacio de estudio</h3><p>Reserva un espacio tranquilo para estudiar, investigar o dar forma a tu próximo proyecto.</p><button type="button" class="boton-secundario" data-servicio="estudio">Reservar espacio <span aria-hidden="true">→</span></button></article>
+      </div>
+    </section>
+    <section id="registro" class="seccion registro">
+      <div><p class="etiqueta">DA EL PRIMER PASO</p><h2>Registro</h2><p>Las buenas historias<br>también se comparten.</p><p class="ayuda">Completa tus datos y elige el servicio que te interesa. Esta página es una práctica escolar: el registro es una demostración local y no envía ni guarda información.</p><div class="sello">Un nuevo capítulo<br><em>te espera.</em></div></div>
+      <form id="formulario">
+        <div class="campos"><label>Nombre<input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" autocomplete="name" required maxlength="100"></label><label>Correo electrónico<input type="email" name="correo" placeholder="nombre@ejemplo.com" autocomplete="email" required></label><label>Edad<input type="number" name="edad" min="1" max="120" placeholder="Tu edad" required></label><label>Fecha<input type="date" name="fecha" required></label></div>
+        <label>Tipo de servicio<select id="servicio" name="servicio" required><option value="">Selecciona una opción</option><option value="prestamo">Préstamo de libros</option><option value="club">Club de lectura</option><option value="estudio">Espacio de estudio</option></select></label>
+        <label>Comentarios<textarea name="comentarios" rows="4" placeholder="Cuéntanos qué te gustaría leer o aprender…" maxlength="1000"></textarea></label>
+        <button type="submit">Registrar <span aria-hidden="true">→</span></button>
+        <p id="resultado" role="status"></p>
+      </form>
+    </section>
+    <section class="seccion interactiva" aria-labelledby="titulo-interactivo"><div><p class="etiqueta">UN TOQUE PERSONAL</p><h2 id="titulo-interactivo">Haz tuyo este espacio.</h2><p id="mensaje" aria-live="polite">Presiona el botón para descubrir un mensaje.</p></div><div class="acciones"><button type="button" class="boton-secundario" onclick="cambiarTexto()">Cambiar mensaje</button><button type="button" class="boton-secundario" onclick="cambiarColor()" id="boton-color" aria-pressed="false">Cambiar color</button></div></section>
+  </main>
+  <footer id="contacto"><div><h2>Entre Líneas</h2><p>Historias que nos conectan.</p></div><div><h3>Contacto</h3><p>Información de ejemplo para práctica escolar.</p><a href="mailto:hola@entrelineas.example">hola@entrelineas.example</a></div><p class="pie">Aplicaciones Web · Práctica 2 · Proyecto académico</p></footer>
+</body>
+</html>
